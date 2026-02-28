@@ -1,0 +1,156 @@
+# Maps canonical team names to aliases across data sources
+# Format: canonical_name -> { source: alias }
+
+soccer:
+  "Arsenal":
+    fbref: "Arsenal"
+    kalshi: "Arsenal"
+  "Manchester City":
+    fbref: "Manchester City"
+    kalshi: "Man City"
+  "Manchester United":
+    fbref: "Manchester Utd"
+    kalshi: "Man United"
+  "Tottenham Hotspur":
+    fbref: "Tottenham"
+    kalshi: "Tottenham"
+  "Newcastle United":
+    fbref: "Newcastle Utd"
+    kalshi: "Newcastle"
+  "West Ham United":
+    fbref: "West Ham"
+    kalshi: "West Ham"
+  "Wolverhampton Wanderers":
+    fbref: "Wolves"
+    kalshi: "Wolves"
+  "Nottingham Forest":
+    fbref: "Nott'ham Forest"
+    kalshi: "Nottingham Forest"
+  "Brighton & Hove Albion":
+    fbref: "Brighton"
+    kalshi: "Brighton"
+  "Leicester City":
+    fbref: "Leicester City"
+    kalshi: "Leicester"
+
+basketball:
+  "Los Angeles Lakers":
+    nba_api: "Los Angeles Lakers"
+    kalshi: "Lakers"
+    abbreviation: "LAL"
+  "Boston Celtics":
+    nba_api: "Boston Celtics"
+    kalshi: "Celtics"
+    abbreviation: "BOS"
+  "Golden State Warriors":
+    nba_api: "Golden State Warriors"
+    kalshi: "Warriors"
+    abbreviation: "GSW"
+  "Milwaukee Bucks":
+    nba_api: "Milwaukee Bucks"
+    kalshi: "Bucks"
+    abbreviation: "MIL"
+  "Denver Nuggets":
+    nba_api: "Denver Nuggets"
+    kalshi: "Nuggets"
+    abbreviation: "DEN"
+  "Philadelphia 76ers":
+    nba_api: "Philadelphia 76ers"
+    kalshi: "76ers"
+    abbreviation: "PHI"
+  "Phoenix Suns":
+    nba_api: "Phoenix Suns"
+    kalshi: "Suns"
+    abbreviation: "PHX"
+  "Miami Heat":
+    nba_api: "Miami Heat"
+    kalshi: "Heat"
+    abbreviation: "MIA"
+  "New York Knicks":
+    nba_api: "New York Knicks"
+    kalshi: "Knicks"
+    abbreviation: "NYK"
+  "Cleveland Cavaliers":
+    nba_api: "Cleveland Cavaliers"
+    kalshi: "Cavaliers"
+    abbreviation: "CLE"
+  "Oklahoma City Thunder":
+    nba_api: "Oklahoma City Thunder"
+    kalshi: "Thunder"
+    abbreviation: "OKC"
+  "Minnesota Timberwolves":
+    nba_api: "Minnesota Timberwolves"
+    kalshi: "Timberwolves"
+    abbreviation: "MIN"
+  "Sacramento Kings":
+    nba_api: "Sacramento Kings"
+    kalshi: "Kings"
+    abbreviation: "SAC"
+  "Dallas Mavericks":
+    nba_api: "Dallas Mavericks"
+    kalshi: "Mavericks"
+    abbreviation: "DAL"
+  "New Orleans Pelicans":
+    nba_api: "New Orleans Pelicans"
+    kalshi: "Pelicans"
+    abbreviation: "NOP"
+  "Indiana Pacers":
+    nba_api: "Indiana Pacers"
+    kalshi: "Pacers"
+    abbreviation: "IND"
+  "Memphis Grizzlies":
+    nba_api: "Memphis Grizzlies"
+    kalshi: "Grizzlies"
+    abbreviation: "MEM"
+  "Atlanta Hawks":
+    nba_api: "Atlanta Hawks"
+    kalshi: "Hawks"
+    abbreviation: "ATL"
+  "Chicago Bulls":
+    nba_api: "Chicago Bulls"
+    kalshi: "Bulls"
+    abbreviation: "CHI"
+  "Houston Rockets":
+    nba_api: "Houston Rockets"
+    kalshi: "Rockets"
+    abbreviation: "HOU"
+  "Orlando Magic":
+    nba_api: "Orlando Magic"
+    kalshi: "Magic"
+    abbreviation: "ORL"
+  "Toronto Raptors":
+    nba_api: "Toronto Raptors"
+    kalshi: "Raptors"
+    abbreviation: "TOR"
+  "Brooklyn Nets":
+    nba_api: "Brooklyn Nets"
+    kalshi: "Nets"
+    abbreviation: "BKN"
+  "Portland Trail Blazers":
+    nba_api: "Portland Trail Blazers"
+    kalshi: "Blazers"
+    abbreviation: "POR"
+  "Charlotte Hornets":
+    nba_api: "Charlotte Hornets"
+    kalshi: "Hornets"
+    abbreviation: "CHA"
+  "San Antonio Spurs":
+    nba_api: "San Antonio Spurs"
+    kalshi: "Spurs"
+    abbreviation: "SAS"
+  "Utah Jazz":
+    nba_api: "Utah Jazz"
+    kalshi: "Jazz"
+    abbreviation: "UTA"
+  "Detroit Pistons":
+    nba_api: "Detroit Pistons"
+    kalshi: "Pistons"
+    abbreviation: "DET"
+  "Washington Wizards":
+    nba_api: "Washington Wizards"
+    kalshi: "Wizards"
+    abbreviation: "WAS"
+  "LA Clippers":
+    nba_api: "LA Clippers"
+    kalshi: "Clippers"
+    abbreviation: "LAC"

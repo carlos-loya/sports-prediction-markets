@@ -1,0 +1,52 @@
+# Maps Kalshi market ticker patterns to sport/market_type/entity
+# Uses regex patterns to match tickers dynamically
+
+patterns:
+  nba_game_outcome:
+    ticker_pattern: "^KXNBA-.*"
+    sport: "basketball"
+    market_type: "game_outcome"
+    title_pattern: "Will the (?P<team>.+?) (beat|win against) the (?P<opponent>.+?)\\?"
+
+  nba_total_points:
+    ticker_pattern: "^KXNBAOU-.*"
+    sport: "basketball"
+    market_type: "total"
+    title_pattern: "Will .+ score (over|under) (?P<line>[\\d.]+) total points"
+
+  nba_player_points:
+    ticker_pattern: "^KXNBAPPTS-.*"
+    sport: "basketball"
+    market_type: "player_prop"
+    prop_type: "points"
+    title_pattern: "Will (?P<player>.+?) score (over|under) (?P<line>[\\d.]+) points"
+
+  nba_player_rebounds:
+    ticker_pattern: "^KXNBAPRBS-.*"
+    sport: "basketball"
+    market_type: "player_prop"
+    prop_type: "rebounds"
+
+  nba_player_assists:
+    ticker_pattern: "^KXNBAPAST-.*"
+    sport: "basketball"
+    market_type: "player_prop"
+    prop_type: "assists"
+
+  soccer_match_outcome:
+    ticker_pattern: "^KXSOC-.*"
+    sport: "soccer"
+    market_type: "game_outcome"
+
+  soccer_total_goals:
+    ticker_pattern: "^KXSOCOU-.*"
+    sport: "soccer"
+    market_type: "total"
+
+  nba_championship:
+    ticker_pattern: "^KXNBACHAMP-.*"
+    sport: "basketball"
+    market_type: "future"
+
+# Manual overrides for specific tickers that don't match patterns
+overrides: {}

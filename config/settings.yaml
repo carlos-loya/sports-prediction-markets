@@ -1,0 +1,62 @@
+leagues:
+  soccer:
+    - name: "Premier League"
+      fbref_id: "9"
+      country: "England"
+      seasons: ["2024-2025", "2023-2024"]
+    - name: "La Liga"
+      fbref_id: "12"
+      country: "Spain"
+      seasons: ["2024-2025", "2023-2024"]
+    - name: "Serie A"
+      fbref_id: "11"
+      country: "Italy"
+      seasons: ["2024-2025", "2023-2024"]
+    - name: "Bundesliga"
+      fbref_id: "20"
+      country: "Germany"
+      seasons: ["2024-2025", "2023-2024"]
+    - name: "Ligue 1"
+      fbref_id: "13"
+      country: "France"
+      seasons: ["2024-2025", "2023-2024"]
+
+  basketball:
+    - name: "NBA"
+      seasons: ["2024-25", "2023-24"]
+
+rate_limits:
+  fbref:
+    requests_per_minute: 8
+  nba_api:
+    requests_per_minute: 30
+  kalshi:
+    reads_per_second: 20
+
+edge_detection:
+  min_edge_pct: 0.05
+  min_volume: 100
+  min_time_to_close_hours: 1
+  kelly_fraction: 0.25
+  confidence_levels:
+    high: 0.10
+    medium: 0.07
+    low: 0.05
+
+models:
+  elo:
+    initial_rating: 1500
+    k_factor_soccer: 32
+    k_factor_nba: 20
+    home_advantage_soccer: 65
+    home_advantage_nba: 100
+  poisson:
+    league_avg_goals: 1.35
+  pace_adjusted:
+    league_avg_pace: 100.0
+
+storage:
+  bronze_path: "data/bronze"
+  silver_path: "data/silver"
+  gold_path: "data/gold"
+  duckdb_path: "data/gold/sports_analytics.duckdb"
