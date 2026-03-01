@@ -1,4 +1,4 @@
-.PHONY: install install-dev test lint format check init-db scan-edges backtest airflow-up airflow-down
+.PHONY: install install-dev test lint format check init-db scan-edges backtest airflow-up airflow-down kafka-up kafka-down run-rt
 
 install:
 	uv sync
@@ -34,3 +34,12 @@ airflow-up:
 
 airflow-down:
 	docker compose down
+
+kafka-up:
+	docker compose up -d kafka kafka-ui
+
+kafka-down:
+	docker compose down kafka kafka-ui
+
+run-rt:
+	uv run python scripts/run_realtime.py

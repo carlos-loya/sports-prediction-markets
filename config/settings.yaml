@@ -60,3 +60,61 @@ storage:
   silver_path: "data/silver"
   gold_path: "data/gold"
   duckdb_path: "data/gold/sports_analytics.duckdb"
+
+realtime:
+  kafka:
+    bootstrap_servers: "localhost:9092"
+    client_id: "sports-rt"
+    group_id: "sports-rt-group"
+  websocket:
+    url: "wss://api.elections.kalshi.com/trade-api/ws/v2"
+    channels:
+      - "ticker"
+      - "trade"
+      - "orderbook_delta"
+      - "fill"
+      - "market_lifecycle_v2"
+    reconnect_delay_initial: 1.0
+    reconnect_delay_max: 60.0
+    ping_interval: 10.0
+  vpin:
+    bucket_size: 50
+    n_buckets: 50
+    threshold_elevated: 0.3
+    threshold_critical: 0.6
+  entropy:
+    min_price: 0.30
+    max_price: 0.70
+  market_maker:
+    enabled: false
+    gamma: 0.1
+    kappa: 1.5
+    sigma_window: 100
+    min_spread_cents: 2
+    max_position: 50
+  risk:
+    max_position_per_market: 100
+    max_total_exposure: 5000.0
+    daily_loss_limit: 500.0
+    emergency_loss_limit: 1000.0
+    gtd_expiry_minutes: 10
+  kelly:
+    n_simulations: 10000
+    fraction: 0.25
+    max_bankroll_pct: 0.20
+  fees:
+    taker_fee_cents: 7.0
+    maker_rebate_cents: 0.0
+    slippage_cents: 1.0
+    min_tradable_edge: 0.03
+  telegram:
+    enabled: false
+  target_series:
+    series_tickers:
+      - "KXNBA"
+      - "KXNFL"
+      - "KXMLB"
+      - "KXNHL"
+      - "KXSOCCER"
+      - "KXMMA"
+  model_cache_refresh_seconds: 300

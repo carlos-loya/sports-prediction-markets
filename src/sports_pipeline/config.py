@@ -11,6 +11,8 @@ import yaml
 from pydantic import BaseModel
 from pydantic_settings import BaseSettings
 
+from sports_pipeline.realtime.config import RealtimeConfig
+
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 
 
@@ -87,11 +89,15 @@ class Settings(BaseSettings):
     kalshi_private_key_path: str = ""
     slack_webhook_url: str = ""
 
+    telegram_bot_token: str = ""
+    telegram_chat_id: str = ""
+
     leagues: LeaguesConfig = LeaguesConfig()
     rate_limits: RateLimitsConfig = RateLimitsConfig()
     edge_detection: EdgeDetectionConfig = EdgeDetectionConfig()
     models: ModelsConfig = ModelsConfig()
     storage: StorageConfig = StorageConfig()
+    realtime: RealtimeConfig = RealtimeConfig()
 
     model_config = {"env_prefix": "", "env_file": ".env", "extra": "ignore"}
 

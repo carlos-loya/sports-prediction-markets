@@ -33,3 +33,20 @@ class EdgeReport(BaseModel):
     total_edges_found: int
     high_confidence_edges: int
     signals: list[EdgeSignal] = []
+
+
+class TradeLogEntry(BaseModel):
+    """A single trade log entry for real-time edge evaluation tracking."""
+    log_id: str
+    timestamp: datetime
+    ticker: str
+    model_prob: float
+    market_prob: float
+    raw_edge: float
+    tradable_edge: float
+    kelly_fraction: float
+    suggested_side: str
+    confidence: str
+    model_name: str
+    rejected: bool
+    reject_reason: str = ""
