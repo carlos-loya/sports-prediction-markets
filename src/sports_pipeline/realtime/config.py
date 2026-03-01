@@ -96,3 +96,6 @@ class RealtimeConfig(BaseModel):
     telegram: TelegramConfig = TelegramConfig()
     target_series: TargetSeriesConfig = TargetSeriesConfig()
     model_cache_refresh_seconds: int = 300
+    paper_mode: bool = True
+    discovery_interval_seconds: int = 300
+    bankroll: float = 10000.0

@@ -7,6 +7,7 @@ via the async REST client, and tracks active orders and positions.
 from __future__ import annotations
 
 import time
+import uuid
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 
@@ -55,9 +56,11 @@ class OrderManager:
         self,
         client: AsyncKalshiClient,
         risk_config: RiskConfig,
+        paper_mode: bool = False,
     ) -> None:
         self._client = client
         self._risk_config = risk_config
+        self._paper_mode = paper_mode
         self._active_orders: dict[str, ActiveOrder] = {}
         self._positions: dict[str, Position] = {}
         self._daily_pnl: float = 0.0
@@ -91,6 +94,22 @@ class OrderManager:
                 reason=rejection,
             )
             return None
+
+        # Paper mode: log the would-be order, skip REST call
+        if self._paper_mode:
+            order_id = f"paper-{uuid.uuid4().hex[:12]}"
+            self._orders_placed += 1
+            log.info(
+                "paper_order",
+                order_id=order_id,
+                ticker=event.ticker,
+                side=event.side,
+                action=event.action,
+                count=event.count,
+                price=event.price,
+                source=event.source,
+            )
+            return order_id
 
         # Compute GTD expiry
         expiry_ts = None

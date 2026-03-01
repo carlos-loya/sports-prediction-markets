@@ -110,6 +110,32 @@ class AsyncKalshiClient:
         """Get order book snapshot for REST-based resync."""
         return await self._get(f"/orderbook/{ticker}")
 
+    async def list_markets(
+        self,
+        series_ticker: str | None = None,
+        status: str = "active",
+        cursor: str | None = None,
+        limit: int = 100,
+    ) -> dict[str, Any]:
+        """List markets with optional filters and pagination.
+
+        Args:
+            series_ticker: Filter by series (e.g. "KXNBA").
+            status: Market status filter ("active", "closed", etc.).
+            cursor: Pagination cursor from previous response.
+            limit: Max results per page (1-200).
+
+        Returns:
+            Dict with "markets" list and "cursor" for next page.
+        """
+        params: dict[str, str] = {"limit": str(limit), "status": status}
+        if series_ticker:
+            params["series_ticker"] = series_ticker
+        if cursor:
+            params["cursor"] = cursor
+        query = "&".join(f"{k}={v}" for k, v in params.items())
+        return await self._get(f"/markets?{query}")
+
     async def _get(self, path: str) -> dict[str, Any]:
         if not self._session:
             raise RuntimeError("Client not started")

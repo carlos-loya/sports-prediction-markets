@@ -118,3 +118,6 @@ realtime:
       - "KXSOCCER"
       - "KXMMA"
   model_cache_refresh_seconds: 300
+  paper_mode: true
+  discovery_interval_seconds: 300
+  bankroll: 10000.0
