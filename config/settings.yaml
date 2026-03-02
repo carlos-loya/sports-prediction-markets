@@ -60,6 +60,7 @@ storage:
   silver_path: "data/silver"
   gold_path: "data/gold"
   duckdb_path: "data/gold/sports_analytics.duckdb"
+  becker_data_path: "data/becker"
 
 realtime:
   kafka:

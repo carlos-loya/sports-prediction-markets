@@ -1,4 +1,4 @@
-.PHONY: install install-dev test lint format check init-db scan-edges backtest airflow-up airflow-down kafka-up kafka-down run-rt
+.PHONY: install install-dev test lint format check init-db scan-edges backtest airflow-up airflow-down kafka-up kafka-down run-rt download-becker becker-backtest
 
 install:
 	uv sync
@@ -43,3 +43,9 @@ kafka-down:
 
 run-rt:
 	uv run python scripts/run_realtime.py
+
+download-becker:
+	uv run python scripts/download_becker.py
+
+becker-backtest:
+	uv run python scripts/run_becker_backtest.py

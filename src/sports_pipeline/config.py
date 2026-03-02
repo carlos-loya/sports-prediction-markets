@@ -76,6 +76,7 @@ class StorageConfig(BaseModel):
     silver_path: str = "data/silver"
     gold_path: str = "data/gold"
     duckdb_path: str = "data/gold/sports_analytics.duckdb"
+    becker_data_path: str = "data/becker"
 
 
 class LeaguesConfig(BaseModel):
